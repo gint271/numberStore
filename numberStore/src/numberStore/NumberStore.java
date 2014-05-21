@@ -21,6 +21,7 @@ public class NumberStore {
 		HopfieldNetwork memory;
 		BufferedReader keyboard = new BufferedReader(new InputStreamReader(System.in));
 		String goAgain = "Yes";
+		String action = "Starter";
 		
 		System.out.println("What is the largest number you want to enter?");
 		try
@@ -44,6 +45,34 @@ public class NumberStore {
 		
 		while(goAgain.equals("Yes"))
 		{
+			System.out.println("Check or Insert?");
+			try
+			{
+				action = keyboard.readLine();
+			}
+			catch (Exception e)
+			{
+				System.out.println("Failed to read action.");
+			}
+			
+			if(action.equals("Check"))
+			{
+				
+			}
+			if(action.equals("Insert"));
+			{
+				System.out.println("Enter the number to be inserted.");
+				try
+				{
+					memory.saveNumber(Integer.parseInt(keyboard.readLine()));
+				}
+				catch (Exception e)
+				{
+					System.out.println("Failed to read number.");
+					return;
+				}
+			}
+			
 			System.out.println("Would you like to enter or check another number?");
 			try
 			{
@@ -51,7 +80,7 @@ public class NumberStore {
 			}
 			catch (Exception e)
 			{
-				System.out.println("Failed to read ")
+				System.out.println("Failed to goAgain.");
 			}
 		}
 	}
